@@ -1,7 +1,9 @@
 from utils.myutils import getAPIData
+from utils.confparser import *
 
-baseURI = 'https://petstore.swagger.io/v2/pet/'
+#baseURI = 'https://petstore.swagger.io/v2/pet/'
 petID = '1'
+baseURI = getPetAPIURL()
 
 def test_getPetByID_response():
     url = baseURI + petID
