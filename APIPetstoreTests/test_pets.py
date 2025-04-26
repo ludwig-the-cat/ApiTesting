@@ -19,3 +19,11 @@ def test_updatePet():
     assert data.get('id') == int(petID)
     assert data.get('name') == 'Zelda'
     assert status == 200
+
+# удаление данных про pet
+def test_deletePet():
+    url = baseURI + petID
+    data, status, time_taken = deleteData(url)
+    assert data.get('message') == '1'
+    assert status == 200
+    assert data.get('type') == 'unknown'

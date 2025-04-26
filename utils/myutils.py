@@ -15,3 +15,11 @@ def putData(url, body):
     time_taken = response.elapsed.total_seconds()
     return data, response.status_code, time_taken
 
+def deleteData(url, opHeader=None):
+    header = opHeader if isinstance(opHeader, dict) else ''
+    response = requests.delete(url)
+    print(response.headers)
+    data = response.json()
+    time_taken = response.elapsed.total_seconds()
+    return data, response.status_code, time_taken
+
